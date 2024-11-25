@@ -2,39 +2,71 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.css" />
-</head>
-
-<body>
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.thumbs.css" />
     <style>
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
         #myCarousel {
-            --f-carousel-spacing: 10px;
-            --f-carousel-slide-width: 60%;
+            max-width: 640px;
+            margin: 0 auto;
         }
 
         #myCarousel .f-carousel__slide {
-            padding: 50px;
-            background: #eee;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
     </style>
+</head>
 
+<body>
     <div>
         <div class="f-carousel" id="myCarousel">
-            <div class="f-carousel__slide">1</div>
-            <div class="f-carousel__slide">2</div>
-            <div class="f-carousel__slide">3</div>
+            <div class="f-carousel__slide" data-thumb-src="https://lipsum.app/id/1/192x144">
+                <img width="640" height="480" alt="" data-lazy-src="https://lipsum.app/id/1/640x480" />
+            </div>
+            <div class="f-carousel__slide" data-thumb-src="https://lipsum.app/id/2/192x144">
+                <img width="640" height="480" alt="" data-lazy-src="https://lipsum.app/id/2/640x480" />
+            </div>
+            <div class="f-carousel__slide" data-thumb-src="https://lipsum.app/id/3/192x144">
+                <img width="640" height="480" alt="" data-lazy-src="https://lipsum.app/id/3/640x480" />
+            </div>
+            <div class="f-carousel__slide" data-thumb-src="https://lipsum.app/id/4/192x144">
+                <img width="640" height="480" alt="" data-lazy-src="https://lipsum.app/id/4/640x480" />
+            </div>
+            <div class="f-carousel__slide" data-thumb-src="https://lipsum.app/id/5/192x144">
+                <img width="640" height="480" alt="" data-lazy-src="https://lipsum.app/id/5/640x480" />
+            </div>
+            <div class="f-carousel__slide" data-thumb-src="https://lipsum.app/id/6/192x144">
+                <img width="640" height="480" alt="" data-lazy-src="https://lipsum.app/id/6/640x480" />
+            </div>
+            <div class="f-carousel__slide" data-thumb-src="https://lipsum.app/id/7/192x144">
+                <img width="640" height="480" alt="" data-lazy-src="https://lipsum.app/id/7/640x480" />
+            </div>
+            <div class="f-carousel__slide" data-thumb-src="https://lipsum.app/id/8/192x144">
+                <img width="640" height="480" alt="" data-lazy-src="https://lipsum.app/id/8/640x480" />
+            </div>
+            <div class="f-carousel__slide" data-thumb-src="https://lipsum.app/id/9/192x144">
+                <img width="640" height="480" alt="" data-lazy-src="https://lipsum.app/id/9/640x480" />
+            </div>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.thumbs.umd.js"></script>
     <script>
-        const container = document.getElementById("myCarousel");
-        const options = { infinite: true, Dots: false };
-
-        new Carousel(container, options);
+        new Carousel(document.getElementById("myCarousel"), {
+            // Your custom options
+            Dots: false,
+            Thumbs: {
+                type: "classic",
+            },
+        }, { Thumbs });
     </script>
 </body>
 
